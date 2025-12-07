@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Twinkle town . ݁˖{% endblock %}</title> {# todo check #}
+    
+    <!-- Link to the compiled custom CSS -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <!-- Extra CSS -->
+    <link href="{% static 'css/particles.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <!-- Particles.js container -->
+        <div id="particles-js"></div>
+        
+        <main role="main" class="flex-grow-1 d-flex flex-column">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-body shadow shadow-sm sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand display-1 fs-3 px-3" href="{% url 'home' %}">Twinkle town</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">
+                                    <i class="fa-solid fa-house text-light"></i>
+                                </a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <form method="post" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn nav-link">
+                                            <i class="fa-solid fa-right-from-bracket text-light"></i>
+                                        </button>
+                                    </form>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="mt-auto bg-body shadow shadow-sm border-top">
+            <div class="d-flex flex-row align-items-center justify-content-end">
+                <span class="text-light fw-light me-3 py-2">&copy; 2025 <span class="signature-text">gd</span>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content" id="modal-content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
+    <!-- Extra JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{% static 'js/particles-config.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<form method="post" action="{% url 'login' %}" 
+    hx-post="{% url 'login' %}" 
+    hx-target="#login-form" 
+    hx-swap="innerHTML">
+    {% csrf_token %}
+    <div class="d-flex flex-column align-content-center">
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="password" name="password" placeholder="Password" class="form-control form-control-sm mb-2">
+        <button type="submit" class="btn btn-primary mx-auto">
+            <span class="special-text">Entra</span>
+        </button>
+    </div>
+    {% if form and form.non_field_errors %}
+        <div class="d-flex flex-column align-content-center mt-3">
+        {% for error in form.non_field_errors %}
+            <span class="small text-danger text-center">{{ error }}</div>
+        {% endfor %}
+        <div>
+    {% endif %}
+</form>

@@ -1,0 +1,12 @@
+<div class="modal-header py-2 px-3">
+  <h5 class="modal-title special-text fs-3">{{ object.name }}</h5>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body d-flex flex-column">
+    <span class="small px-2 mb-4">{{ object.description }}</span>
+    {% if not user.is_authenticated %}
+        <div id="login-form">
+            {% include "partials/login_form.html" %}
+        </div>
+    {% endif %}
+</div>

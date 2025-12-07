@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center p-4">
+        <span class="special-text fw-medium text-light text-center mb-4" style="font-size: 5rem;">Twinkle town</span>
+        <span class="fs-5 fw-light text-center text-light mb-5">Sai come tornare a casa per Natale?</span>
+        <div class="d-flex flex-row gap-2">
+            <a class="btn btn-outline-light d-flex flex-row align-items-center gap-2 px-3 py-2 me-1" href="{% url 'about' %}">
+                <span>Istruzioni</span>
+                <i class="fa-regular fa-newspaper"></i>
+            </a>
+            <a class="btn btn-light px-3 py-2 me-1" href="{% url 'town' %}">Apri la mappa</a>
+        </div>
+    </div>
+{% endblock %}
