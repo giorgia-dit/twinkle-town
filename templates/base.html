@@ -36,11 +36,19 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                {% url 'about' as about_url %}
+                                <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == about_url %}active{% endif %}" 
+                                    href="{{ about_url }}">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="special-text">Istruzioni</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 {% url 'users' as users_url %}
                                 <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == users_url %}active{% endif %}" 
                                     href="{{ users_url }}">
                                     <i class="fa-solid fa-person-shelter"></i>
-                                    <span class="special-text">Residents</span>
+                                    <span class="special-text">Abitanti</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -48,7 +56,7 @@
                                 <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == town_url %}active{% endif %}" 
                                     href="{{ town_url }}">
                                     <i class="fa-solid fa-map"></i>
-                                    <span class="special-text">Map</span>
+                                    <span class="special-text">Mappa</span>
                                 </a>
                             </li>
                             {% if user.is_authenticated %}
@@ -95,5 +103,6 @@
     <!-- Extra JS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="{% static 'js/particles-config.js' %}"></script>
+    <script src="{% static 'js/bs-popover.js' %}"></script>
 </body>
 </html>

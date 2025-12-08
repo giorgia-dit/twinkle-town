@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-<h3 class="display-3 text-light fw-bold my-5 mx-auto">Who's in town?</h3>
+<h3 class="display-3 text-light fw-bold text-center px-3 my-5 mx-auto">Chi è sulla via di casa?</h3>
 <div class="d-flex flex-row justify-content-center align-items-center mx-4">
     <form method="get">
-        <button type="submit" name="shuffle" class="btn btn-outline-primary py-2 px-3">
-            <span class="small me-1">Shuffle</span>
+        <button type="submit" name="shuffle" class="btn btn-sm btn-outline-primary px-3">
+            <span class="me-1">Casuale</span>
             <i class="fa-solid fa-dice"></i>
         </button>
     </form>
@@ -16,9 +16,18 @@
         <div class="col">
             <div class="card border border-primary border-2 rounded-5" style="height: 130px;">
                 <div class="card-body py-3 px-4">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-7">
-                            <h5 class="special-text text-nowrap card-title fs-3 fw-bold">{{ user.first_name }}</h5>
+                    <div class="row d-flex flex-row align-items-center justify-content-between">
+                        <div class="col-7 d-flex flex-column">
+                            <span class="special-text text-nowrap mb-1 fs-3 fw-bold">{{ user.first_name }}</span>
+                            {% if user.last_login %}
+                                <span>{{ user.house.name }}</span>
+                            {% else %}
+                                <span class="placeholder-glow mb-0"
+                                    data-bs-toggle="popover" 
+                                    data-bs-content="{{ user.first_name }} è ancora in viaggio! Riesci già a indovinare qual è la sua casa?">
+                                    <span class="placeholder placeholder-xs w-100"></span>
+                                </span>
+                            {% endif %}
                         </div>
                         <div class="col-5">
                             {% with 'img/svg/'|add:user.username|add:'.svg' as img_path %}
