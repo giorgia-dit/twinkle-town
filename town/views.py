@@ -31,6 +31,7 @@ class UserListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        queryset = queryset.exclude(pk__in=[1, 2])
         if 'shuffle' in self.request.GET:  
             return queryset.order_by('?') 
         return queryset.order_by('first_name')

@@ -26,18 +26,38 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}">
-                                    <i class="fa-solid fa-house text-light"></i>
+                                {% url 'home' as home_url %}
+                                <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == home_url %}active{% endif %}" 
+                                    href="{{ home_url }}">
+                                    <i class="fa-solid fa-house"></i>
+                                    <span class="special-text">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                {% url 'users' as users_url %}
+                                <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == users_url %}active{% endif %}" 
+                                    href="{{ users_url }}">
+                                    <i class="fa-solid fa-person-shelter"></i>
+                                    <span class="special-text">Residents</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                {% url 'town' as town_url %}
+                                <a class="nav-link d-flex flex-row gap-2 align-items-center {% if request.path == town_url %}active{% endif %}" 
+                                    href="{{ town_url }}">
+                                    <i class="fa-solid fa-map"></i>
+                                    <span class="special-text">Map</span>
                                 </a>
                             </li>
                             {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <form method="post" action="{% url 'logout' %}">
                                         {% csrf_token %}
-                                        <button type="submit" class="btn nav-link">
-                                            <i class="fa-solid fa-right-from-bracket text-light"></i>
+                                        <button type="submit" class="btn nav-link d-flex flex-row gap-2 align-items-center">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                            <span class="special-text">Logout</span>
                                         </button>
                                     </form>
                                 </li>
