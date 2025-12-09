@@ -1,35 +1,71 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3 class="display-3 text-light fw-medium my-5 mx-auto">Welcome to Twinkle Town!</h3>
+<h3 class="display-3 text-light fw-medium my-5 px-3 mx-auto">Welcome to Twinkle Town!</h3>
 <div class="container-fluid text-center">
     <div class="row justify-content-center">
         <div class="col-lg-5 text-start">
-            <div class="card border border-light border-2 p-2 mb-5" style="background-color: rgba(250, 250, 250, 0.1);">
+            <div class="card p-2 mx-2 mb-5" style="background-color: rgba(250, 250, 250, 0.15);">
                 <div class="card-body text-light">
                     <p class="mb-3">
-                        This Christmas, the air is filled with magic, laughter, and… the sweet scent of chocolate! 
-                        Gather 'round, my friends, for a game of mystery, delight, and a sprinkle of holiday magic.
+                        Twinkle Town è un <span class="fw-medium text-info">piccolo paese</span> dalla connotazione geografica incerta.<br>
+                        Come nella vecchia storia dell’isola di Thule - nessuno conosce la sua posizione precisa, ma molti ne assicurano l’esistenza.<br>
+                        Sembra apparire soltanto all’arrivo delle feste, e svanire subito dopo. Le strade si svuotano, le case si spengono e il paese si addormenta.
                     </p>
                     <p class="mb-3">
-                        Each of you will receive a special chocolate bar, lovingly crafted with joy and festive cheer. 
-                        But here's the catch: <strong>only one of these chocolate bars contains a golden ticket!</strong> 
-                        The lucky friend who finds the ticket will win a very special Christmas gift. 🎁<br>
-                        The rest of you will still enjoy the sweet consolation of chocolate and the thrill of the hunt! 🔍 
+                        Gli abitanti, ogni anno, sembrano non ricordare più la via di casa: persi tra la neve e il tempo, camminano senza bussola.<br>
+                        <span class="fw-semibold text-primary">Ed eccoti qui!</span> Come gli altri, ti aggiri tra i vicoli silenziosi, sai che c’è <span class="fw-medium text-info">una casa che ti appartiene</span>… ma proprio non ricordi quale.
                     </p>
-                    <p class="mb-2"><strong>How to play</strong></p>
-                    <ul class="mb-3">
-                        <li>📦 You can track your own chocolate delivery by pressing the <strong>"My delivery"</strong> button in the navbar.</li>
-                        <li>🍫 When your package arrives, open it and check for a golden ticket—if you find one, you won the prize!</li>
-                        <li>🎅 Want to see who else is part of the game? Check out the <strong>"Who's in?"</strong> button on the home page or in the navbar.</li>
-                        <li>🎁 Once all the deliveries are completed, you'll be able to discover the prize and the winner (if it’s not you!) by clicking the <strong>"Secret prize"</strong> button in the navbar.</li>
-                        <li>🎲 Remember: the winner is selected at random, so everyone has an equal chance to find the golden ticket!</li>
+                    <p class="mb-3">
+                        Il Natale è vicino e il paese ha bisogno di te. Infatti, solo quando tutte le case saranno di nuovo <span class="fw-medium text-info">illuminate</span>, Twinkle Town potrà tornare ad essere un <span class="fw-medium text-info">luogo reale</span>.<br>
+                    </p>
+                    <p class="mb-3">
+                        Riuscirai a trovare la tua casa ed entrarvi?
+                    </p>
+                    <p class="fs-5 fw-bold mt-4 mb-3">Come si gioca</p>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex flex-column">
+                            <span class="fw-semibold">Osserva bene</span>
+                            <span>
+                                Nel tuo pacchetto, troverai due bustine più piccole. 
+                                Ognuna contiene un elemento utile per affrontare la missione.
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex flex-column">
+                            <span class="fw-semibold">Trova la tua casa</span>
+                            <span>
+                                Dentro la busta 1, c'è un piccolo oggetto. 
+                                Può sembrarti strano, ma racchiude tutti i dettagli necessari per individuare la tua casa sulla mappa...
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex flex-column">
+                            <span class="fw-semibold">Decifra la tua chiave</span>
+                            <span>
+                                Quando avrai trovato la tua casa, cliccaci su! 
+                                Scoprirai nuovi dettagli e sarà il momento di aprire la busta numero 2. 
+                                Dentro c'è un piccolo mistero da decifrare: solo così potrai entrare ed accendere la luce.
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex flex-column">
+                            <span class="fw-semibold">Accendi la luce</span>
+                            <span>
+                                Se sei riuscito ad trovare la chiave, ben fatto! 
+                                La tua luce si accenderà e Twinkle Town comincerà a brillare un po' di più grazie a te.
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex flex-column">
+                            <span class="fw-semibold">Aspetta che tutti tornino a casa</span>
+                            <span>
+                                Quando tutti gli abitanti avranno trovato ed illuminato la propria casa, 
+                                in paese si rivelerà un piccolo incanto.
+                            </span>
+                        </li>
                     </ul>
                     <p class="mb-1">
-                        So, ready to start?
-                        Just wait for your chocolate gift, keep your eyes open for the glittering prize, and let’s make this a Christmas to remember!<br><br>
-                        Good luck, my golden-ticket seekers. Let the magic begin! 🍫✨
+                        Tutto chiaro? Pronto a iniziare?<br>
+                        Buona fortuna per la tua <span class="fw-medium text-info">ricerca</span>!
                     </p>
+                    <a class="btn btn-primary px-3 py-2 mt-3 mx-auto" href="{% url 'town' %}">Vai alla mappa</a>
                 </div>
             </div>
         </div>
