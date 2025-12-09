@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aubrey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+// Custom variables
+
+// Colors
+
+$body-bg: #1D2F40;
+$body-color: #F5F5F5;
+$body-dark-color: #263238;
+
+$primary: #FBC02D;
+$secondary: #90A4AE;
+$tertiary: #CFD8DC;
+$light: #F5F5F5;
+$dark: #263238;
+$danger: #B71C1C;
+$info: #BBDEFB;
+
+$light-transparent: rgba(245, 245, 245, 0.5);
+$light-semitransparent: rgba(245, 245, 245, 0.9);
+
+// Fonts
+
+$font-family-sans-serif: 'Figtree', sans-serif;
+$display-font-family: 'Aubrey', serif;
+
+$font-size-base: 1.1rem;
+
+// Borders
+
+$border-radius: 10px;
+
+// Cards
+
+$card-bg: $light;
+$card-color: $body-dark-color;
+
+// Forms
+
+$input-bg: $light; 
+$input-color: $body-dark-color;
+$input-border-color: $tertiary;
+$input-focus-border-color: $primary;
+$input-border-radius-sm: 3;
+
+// Modals
+
+$modal-content-bg: $light-semitransparent;
+$modal-content-color: $body-dark-color;
+$modal-content-border-width: 0;
+$modal-header-border-color: $light;
+$modal-header-border-width: 2px;
+
+// Navs
+
+$nav-link-color: $light;
+$nav-link-hover-color: $light-transparent;
+
+// Popovers
+
+$popover-bg: $light;
+$popover-body-color: $body-dark-color;
+$popover-max-width: 200px;
+$popover-header-bg: $primary;
+$popover-header-color: $body-dark-color;
+$popover-border-color: $secondary;
+
+// Placeholders
+
+$placeholder-opacity-max: .2;
+$placeholder-opacity-min: .1;
+
+// Custom code
+
+/* html, body {
+  overflow: hidden;
+} */
+
+@media (max-width: 991.98px) {
+  .map-wrapper {
+    overflow-x: auto;   /* allow horizontal scroll */
+    overflow-y: hidden; /* no space below, no vertical scroll */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .map-wrapper > svg {
+    height: 100vh;
+    width: auto;
+  }
+}
+
+.special-text {
+  font-family: $display-font-family;
+  line-height: 0.8;
+}
+
+.signature-text {
+  font-family: 'Edu AU VIC WA NT Pre', serif;
+}
+
+#houses * {      
+  pointer-events: all;
+  cursor: pointer;
+}
+
+g.light-off rect {
+  fill: #455A64;
+}
+
+g.light-on rect {
+  fill: #ffca28;
+}
+
+.img-svg {
+    filter: invert(12%) sepia(300%) saturate(300%) hue-rotate(-230deg) brightness(80%) contrast(100%);
+}
+
+// Bootstrap from node_modules
+@import "bootstrap/scss/bootstrap";
