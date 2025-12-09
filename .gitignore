@@ -115,5 +115,4 @@ fixtures/
 notebooks/
 data/
 .DS_Store
-backup.json
 town.ai

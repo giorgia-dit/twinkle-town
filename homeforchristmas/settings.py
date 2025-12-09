@@ -136,15 +136,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
 
-# Add this line to tell Django where to find your static files
+STATIC_URL = '/static/'
+
+# Local static folder
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # This points to the central static directory
+    BASE_DIR / 'static',
 ]
 
+# Where static files will be collected on Render
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
