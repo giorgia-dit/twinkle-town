@@ -13,16 +13,16 @@ $body-bg: #1D2F40;
 $body-color: #F5F5F5;
 $body-dark-color: #263238;
 
+$light-transparent: rgba(245, 245, 245, 0.5);
+$light-semitransparent: rgba(245, 245, 245, 0.9);
+
 $primary: #FBC02D;
 $secondary: #90A4AE;
-$tertiary: #CFD8DC;
+$tertiary: $light-semitransparent;
 $light: #F5F5F5;
 $dark: #263238;
 $danger: #B71C1C;
 $info: #BBDEFB;
-
-$light-transparent: rgba(245, 245, 245, 0.5);
-$light-semitransparent: rgba(245, 245, 245, 0.9);
 
 // Fonts
 

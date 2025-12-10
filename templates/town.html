@@ -2,6 +2,14 @@
 {% load static %} 
 
 {% block content %}
+    {% if not user.is_authenticated %}
+        <div class="alert alert-secondary m-0 rounded-0 py-2" role="alert">
+            <div class="opacity-50 lh-1">
+                <span class="special-text fw-bold me-1">Indizio #1</span>
+                <span class="small">Non serve cercare altrove, se hai l'indirizzo tra le mani.</span>
+            </div>
+        </div>
+    {% endif %}
     <div class="container-fluid map-wrapper p-0">   
         {% include 'map.html' %}
     </div>
