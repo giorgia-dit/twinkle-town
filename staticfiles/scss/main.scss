@@ -23,6 +23,7 @@ $light: #F5F5F5;
 $dark: #263238;
 $danger: #B71C1C;
 $info: #BBDEFB;
+$success: #2E7D32;
 
 // Fonts
 
@@ -95,7 +96,7 @@ $placeholder-opacity-min: .1;
 }
 
 .special-text {
-  font-family: $display-font-family;
+  font-family: $display-font-family !important;
   line-height: 0.8;
 }
 

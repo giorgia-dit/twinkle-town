@@ -68,3 +68,7 @@ class CustomLoginView(LoginView):
 
     def get_success_url(self):
         return reverse('town')
+    
+
+class ThanksPageView(TemplateView):
+    template_name = 'thanks.html'

@@ -12,5 +12,12 @@
         <div id="login-form" class="mt-4">
             {% include "partials/login_form.html" %}
         </div>
+    {% elif user.id == object.owner.id %}
+        <div class="d-flex flex-column align-items-center px-2 mt-3 mb-2">
+            <span class="small fw-semibold mb-2">Missione compiuta! La tua casa è illuminata.</span>
+            <a href="{% url 'thanks' %}" class="btn btn-primary">
+                <span class="display-6 fs-6">Grazie</span>
+            </a>
+        </div>
     {% endif %}
 </div>
