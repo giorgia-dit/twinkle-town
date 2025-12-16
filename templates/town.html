@@ -9,6 +9,13 @@
                 <span class="small">Non serve cercare altrove, se hai l'indirizzo tra le mani.</span>
             </div>
         </div>
+    {% else %}
+        <div class="alert alert-success m-0 rounded-0 py-2" role="alert">
+            <div class="opacity-50 lh-1">
+                <span class="special-text fw-bold me-1">Missione compiuta!</span>
+                <span class="small">Ora che la luce è accesa, entra in casa: c'è qualcosa che ti attende!</span>
+            </div>
+        </div>
     {% endif %}
     <div class="container-fluid map-wrapper p-0">   
         {% include 'map.html' %}

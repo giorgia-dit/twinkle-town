@@ -2177,9 +2177,11 @@ progress {
 }
 
 .form-text {
-  margin-top: 0.25rem;
-  font-size: 0.875em;
-  color: var(--bs-secondary-color);
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: light;
+  color: #263238;
 }
 
 .form-control {
@@ -2225,7 +2227,7 @@ progress {
   padding: 0;
 }
 .form-control::placeholder {
-  color: var(--bs-secondary-color);
+  color: #263238;
   opacity: 1;
 }
 .form-control:disabled {
@@ -2812,8 +2814,9 @@ textarea.form-control-lg {
 .valid-feedback {
   display: none;
   width: 100%;
-  margin-top: 0.25rem;
-  font-size: 0.875em;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-style: italic;
   color: var(--bs-form-valid-color);
 }
 
@@ -2902,8 +2905,9 @@ textarea.form-control-lg {
 .invalid-feedback {
   display: none;
   width: 100%;
-  margin-top: 0.25rem;
-  font-size: 0.875em;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-style: italic;
   color: var(--bs-form-invalid-color);
 }
 
