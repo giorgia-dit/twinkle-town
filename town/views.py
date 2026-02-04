@@ -22,6 +22,11 @@ class TownPageView(ListView):
 
     def get_queryset(self):
         return super().get_queryset().select_related('owner')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['full_town'] = not User.objects.filter(last_login__isnull=True).exists()
+        return context
 
 
 class UserListView(ListView):
