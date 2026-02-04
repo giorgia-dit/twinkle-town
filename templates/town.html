@@ -3,23 +3,6 @@
 
 {% block content %}
     {% if full_town %}
-        <div class="alert alert-secondary alert-dismissible border border-primary border-2 fade show position-absolute top-50 start-50 translate-middle"
-            role="alert"
-            style="width: 20rem;">
-            <p class="mb-4">
-                <span class="fw-medium">Finalmente!</span> Grazie a voi, la città è tutta illuminata.
-            </p>
-            <div class="text-start">
-                <a href="{% url 'thanks' %}" class="btn btn-primary btn-sm">
-                    Vai alla pagina finale
-                </a>
-            </div>
-            <button type="button"
-                    class="btn-close" style="width: 0.5em; height: 0.3em;"
-                    data-bs-dismiss="alert"
-                    aria-label="Close">
-            </button>
-        </div>
     {% elif not user.is_authenticated %}
         <div class="alert alert-secondary m-0 rounded-0 py-2" role="alert">
             <div class="opacity-50 lh-1">
